@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>One on One Fighter</title>
+        <style></style>
+        <link rel="stylesheet" href="OOFCSS.css">
+        <script src="OOFJS.js"></script>
+    </head>
+    <body onload="initialize1();">
+        <div class="title">One on One Fighter</div>
+        <br>
+        <u>Rules</u>: 
+        <ol>
+            <li>
+                The goal of the game is to defeat the other fighter. You and your opponent each make a move each turn simultaneously.
+            </li>
+            <li>
+                Each fighter has 4 stats: strength, speed, cunning, and fatigue. You will always start with 6 strength, 6 speed, 6 cunning, and 30 fatigue. The computer will start with two stats randomly changed.
+                <ul>
+                    <li><u>Strength</u>- Used to calculate attack</li>
+                    <li><u>Speed</u>- Used to calculate attack and defense. Will decide who attacks first if both fighters attack in one turn.</li>
+                    <li><u>Cunning</u>- Used to calculate attack and defense if defending.</li>
+                    <li><u>Fatigue</u>- Used to determine when a fighter can do a finishing move.</li>
+                </ul>
+            </li>
+            <li>
+                Each turn, a fighter makes one of 3 moves: attack, defend, or finishing move.
+                <ul>
+                    <li>
+                        <u>Attack</u>- Attack your opponent, reducing their fatigue.
+                        <ul>
+                            <li>How attack is calculated: (strength + speed + cunning) / a random number 1-3</li>
+                            <li>Damage dealt: attack - defense</li>
+                            <li>No damage is dealt if attack < defense</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <u>Defend</u>- Defend against your opponent. If both players, defend, they both recover a random number of fatigue 1-6.
+                        <ul>
+                            <li>Defense when defending: speed + cunning</li>
+                            <li>Defense when not defending: speed + a random number 1-6</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <u>Finishing Move</u>- Use this move to finish off your opponent. The move is only available under one of these two circumstances:
+                        <ul>
+                            <li>
+                                Finishing move is only available under one of these two circumstances:
+                                <ul>
+                                    <li>One fighter's fatigue is double the other's</li>
+                                    <li>One fighter's fatigue goes below 0</li>
+                                </ul>
+                            </li>
+                            <li>How finishing move is calculated: (strength + speed) / a random number 1-3</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>The game is won when one fighter deals more than 1 damage to the other fighter using their finishing move.</li>
+        </ol>
+        <pre>
+<button onclick="selectFighter(1);">Fighter 1</button>         <button onclick="selectFighter(2);">Fighter 2</button>
+<br>
+<img id="fighterImg">
+<div id="space"></div>
+<button id="start" onclick="start();">Start Game</button>
+<br><br>
+<div id="warning"></div>
+        </pre>
+    </body>
+</html>

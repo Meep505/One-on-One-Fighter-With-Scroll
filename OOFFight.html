@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fight</title>
+        <style></style>
+        <link rel="stylesheet" href="OOFCSS.css">
+        <script src="OOFJS.js"></script>
+    </head>
+    <body onload="initialize2();">
+        <div class="title">One on One Fighter</div>
+        <br>
+        <div id="gridContainer">
+            <div id="gridItem1">
+                <img id="stage" src="images/fox-falco.png">
+                <br><br>
+                <div id="buttons" class="innerGrid">
+                    <button onclick="move(1);" id="atkBtn">Attack</button>
+                    <button onclick="move(2);" id="defBtn">Defend</button>
+                    <button onclick="move(3);" id="fMvBtn">Finishing Move</button>
+                </div>
+                <br><br>
+                <div id="stats" class="innerGrid">
+                    <div class="statsInner">
+                        Player Strength: <span id="pStr"></span><br>
+                        Player Speed: <span id="pSpd"></span><br>
+                        Player Cunning: <span id="pCun"></span><br>
+                        Player Fatigue: <span id="pFat"></span><br>
+                    </div>
+                    <div class="statsInner">
+                        Computer Strength: <span id="cStr"></span><br>
+                        Computer Speed: <span id="cSpd"></span><br>
+                        Computer Cunning: <span id="cCun"></span><br>
+                        Computer Fatigue: <span id="cFat"></span><br>
+                    </div>
+                </div>
+                <br>
+                <button onclick="reset();">Reset Game</button>
+            </div>
+            <div id="log-container">
+                <div id="log"></div>
+            </div>
+        </div>
+    </body>
+</html>
